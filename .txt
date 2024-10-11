@@ -1,0 +1,36 @@
+{
+  "date": "2024/02/21 18:59:23.195",
+  "level": "FATAL",
+  "message": {
+    "LogLevel": "Critical",
+
+    "ApplicationName": "Server",
+    "Namespace": "Server.Controllers.V1",
+    "ClassName": "UsersController",
+    "MethodName": "Login",
+
+    "LocalIP": "::1",
+    "LocalPort": "7200",
+    "RemoteIP": "::1",
+    "UserName": null,
+    "RequestPath": "/api/v1/Users/Login",
+    "HttpReferrer": "https://localhost:7200/swagger/index.html",
+
+    "Message": "An exception has been raised that is likely due to a transient failure.",
+    "Parameters": null,
+    "Exceptions": [
+      {
+        "Message": "An exception has been raised that is likely due to a transient failure. - (Message Level: 1)",
+        "StackTrace": "   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func\u00604 operation, Func\u00604 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable\u00601.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable\u00601 asyncEnumerable, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable\u00601 asyncEnumerable, CancellationToken cancellationToken)\r\n   at Microsoft.AspNetCore.Identity.UserManager\u00601.FindByNameAsync(String userName)\r\n   at Services.UserServices.GetUserByName(String name) in D:\\Projects\\ShopApi\\src\\Server\\Services\\User\\UserServices.cs:line 568\r\n   at Services.UserServices.LoginAsync(LoginRequestViewModel requestViewModel, String ipAddress) in D:\\Projects\\ShopApi\\src\\Server\\Services\\User\\UserServices.cs:line 292\r\n   at Server.Controllers.V1.UsersController.LoginAsync(LoginRequestViewModel requestViewModel) in D:\\Projects\\ShopApi\\src\\Server\\Controllers\\V1\\UsersController.cs:line 28\r\n   at lambda_method8(Closure, Object)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeActionMethodAsync\u003Eg__Logged|12_1(ControllerActionInvoker invoker)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.\u003CInvokeNextActionFilterAsync\u003Eg__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)"
+      },
+      {
+        "Message": "Failed to connect to 127.0.0.1:5432 - (Message Level: 2)",
+        "StackTrace": "   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)\r\n   at Npgsql.Internal.NpgsqlConnector.RawOpen(SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)\r\n   at Npgsql.Internal.NpgsqlConnector.\u003COpen\u003Eg__OpenCore|216_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)\r\n   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)\r\n   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)\r\n   at Npgsql.PoolingDataSource.\u003CGet\u003Eg__RentAsync|28_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)\r\n   at Npgsql.NpgsqlConnection.\u003COpen\u003Eg__OpenAsync|45_0(Boolean async, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable\u00601.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func\u00604 operation, Func\u00604 verifySucceeded, CancellationToken cancellationToken)"
+      },
+      {
+        "Message": "No connection could be made because the target machine actively refused it. - (Message Level: 3)",
+        "StackTrace": "   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)\r\n   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)\r\n   at System.Net.Sockets.Socket.\u003CConnectAsync\u003Eg__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)\r\n   at Npgsql.TaskTimeoutAndCancellation.ExecuteAsync(Func\u00602 getTaskFunc, NpgsqlTimeout timeout, CancellationToken cancellationToken)\r\n   at Npgsql.Internal.NpgsqlConnector.ConnectAsync(NpgsqlTimeout timeout, CancellationToken cancellationToken)"
+      }
+    ]
+  }
+}
